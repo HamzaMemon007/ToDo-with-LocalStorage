@@ -1,0 +1,122 @@
+:root {
+    --primary-color: #4CAF50; /* Green */
+    --secondary-color: #333;  /* Dark Gray */
+    --text-color: #fff;       /* White for text */
+    --background-color: #f4f4f4; /* Light Gray */
+    --button-color: #f44336;  /* Red for delete button */
+    --button-hover: #d32f2f;  /* Darker red on hover */
+    --card-shadow: rgba(0, 0, 0, 0.2); /* Shadow color */
+    --border-radius: 10px;
+    --card-padding: 20px;
+    --card-gap: 15px;
+    --font-family: 'Arial', sans-serif;
+}
+
+/* General body styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--secondary-color);
+    line-height: 1.6;
+    width: 100vw;
+    height: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.main{
+    max-width: 1440px;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Root container styles */
+#Root {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--card-gap);
+    padding: 20px;
+}
+
+/* Product card styles */
+.pro-card {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: var(--card-padding);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px var(--card-shadow);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 250px;
+}
+
+.pro-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px var(--card-shadow);
+}
+
+/* Card heading styles */
+.card-heading {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+/* Card price styles */
+.card-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* Card description styles */
+.card-description {
+    font-size: 1rem;
+    margin: 10px 0;
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+/* Delete button styles */
+.delete-button {
+    background-color: var(--button-color);
+    color: var(--text-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.delete-button:hover {
+    background-color: var(--button-hover);
+    transform: scale(1.05);
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .pro-card {
+        padding: 15px;
+    }
+
+    .card-heading {
+        font-size: 1.2rem;
+    }
+
+    .card-price {
+        font-size: 1rem;
+    }
+
+    .card-description {
+        font-size: 0.9rem;
+    }
+}

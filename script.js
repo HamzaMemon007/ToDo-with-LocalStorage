@@ -2,8 +2,8 @@ showProduct()
 
 let ProData = JSON.parse(localStorage.getItem("product")) || [];
 const add = () => {
-    let proName = document.getElementById("product-name").value
-    let proPrice = document.getElementById("product-price").value
+    let proName = document.getElementById("product-name").value.toUpperCase()
+    let proPrice = document.getElementById("product-price").value.toUpperCase()
     let prodescription = document.getElementById("description").value
     addProduct(proName, proPrice, prodescription)
 }
@@ -48,19 +48,23 @@ function showProduct() {
         cardHeading.innerHTML = data[i].name
         proCard.appendChild(cardHeading)
         console.log(cardHeading);
+        cardHeading.className = " card-heading";
         
         let cardPrice = document.createElement("h2")
         cardPrice.innerHTML = data[i].price
         proCard.appendChild(cardPrice)
+        cardPrice.className = " card-price";
 
         let cardDescription = document.createElement("p")
         cardDescription.innerHTML = data[i].description
         proCard.appendChild(cardDescription)
+        cardDescription.className = " card-description";
         
         let deleteButton = document.createElement("button");
         deleteButton.innerHTML = "Delete";
         deleteButton.onclick = () => deleteProduct(i);
         proCard.appendChild(deleteButton);
+        deleteButton.className = " delete-button";
 
         document.getElementById("Root").appendChild(proCard)
     }
